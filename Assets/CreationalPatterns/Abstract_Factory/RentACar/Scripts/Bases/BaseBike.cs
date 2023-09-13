@@ -4,12 +4,11 @@ using UnityEngine;
 
 namespace VehicleExample
 {
-    public abstract class BaseAuto : IVehicle
+    public abstract class BaseBike : IVehicle
     {
         protected VehicleType _vehicleType;
         protected int _baseCost;
         protected int _chargesPerUnitDistance;
-
 
         public void Booking(int distance)
         {
@@ -17,13 +16,13 @@ namespace VehicleExample
             SetBaseCost();
             SetVehicleChargesPerUnitsDistace();
             int cost = CalculateCostOfBooking(distance);
-            Debug.Log("You have booked a " + _vehicleType + " Autorickshaw for a distance of " + distance + " kms at a total cost of " + cost + ". ");
-        }
 
+            Debug.Log("You have booked a " + _vehicleType.ToString() + " Bike for a distance of " + distance + " kms at a total cost of " + cost + ". ");
+        }
 
         public int CalculateCostOfBooking(int distance)
         {
-            int serviceCharge = 3;
+            int serviceCharge = 2;
 
             return _baseCost + _chargesPerUnitDistance * distance + serviceCharge;
         }
@@ -32,7 +31,7 @@ namespace VehicleExample
         {
             int cost = CalculateCostOfBooking(distance);
 
-            return "You have booked a " + _vehicleType.ToString() + " Car for a distance of " + distance + " kms at a total cost of " + cost + ". ";
+            return "You have booked a " + _vehicleType.ToString() + " Bike for a distance of " + distance + " kms at a total cost of " + cost + ". ";
         }
 
         public abstract void SetBaseCost();

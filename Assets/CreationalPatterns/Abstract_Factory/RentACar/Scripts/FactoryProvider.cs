@@ -15,6 +15,8 @@ namespace VehicleExample
                     return new CarFactory();
                 case VehicleFactoryType.Auto:
                     return new AutoFactory();
+                case VehicleFactoryType.Bike:
+                    return new BikeFactory();
                 default:
                     return new CarFactory();
             }

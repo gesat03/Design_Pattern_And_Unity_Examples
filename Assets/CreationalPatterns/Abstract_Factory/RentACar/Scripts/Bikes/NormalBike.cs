@@ -4,21 +4,21 @@ using UnityEngine;
 
 namespace VehicleExample
 {
-    public class SharedAuto : BaseAuto
+    public class NormalBike : BaseBike
     {
         public override void SetBaseCost()
         {
-            _vehicleType = VehicleType.Shared_Auto;
+            _baseCost = 20;
         }
 
         public override void SetVehicleChargesPerUnitsDistace()
         {
-            _baseCost = 0;
+            _chargesPerUnitDistance = 5;
         }
 
         public override void SetVehicleType()
         {
-            _chargesPerUnitDistance = 10;
+            _vehicleType = VehicleType.Shared_Auto;
         }
     }
 }
