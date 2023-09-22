@@ -17,7 +17,7 @@ namespace VehicleExample
             SetBaseCost();
             SetVehicleChargesPerUnitsDistace();
             int cost = CalculateCostOfBooking(distance);
-            Debug.Log("You have booked a " + _vehicleType.ToString() + " Car for a distance of " + distance + " kms at a total cost of " + cost + ". ");
+            Debug.Log("You have booked a " + _vehicleType.ToString() + " Auto for a distance of " + distance + " kms at a total cost of " + cost + ". ");
         }
 
 
@@ -34,7 +34,7 @@ namespace VehicleExample
 
             Debug.Log("here");
 
-            return "You have booked a " + _vehicleType.ToString() + " Car for a distance of " + distance + " kms at a total cost of " + cost + ". ";
+            return "You have booked a " + _vehicleType.ToString() + " Auto for a distance of " + distance + " kms at a total cost of " + cost + ". ";
         }
 
         public abstract void SetBaseCost();
