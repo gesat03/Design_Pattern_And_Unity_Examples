@@ -1,7 +1,10 @@
 namespace TowerDefenceExample
 {
-    public interface ITSpecialities<T>
+    public interface ITSpecialities
     {
-        T GetValue();
+        public ITDamage TowerDamage();
+        public ITDetectRange TowerDetectRange();
+        public ITFireRate TowerFireRate();
+
     }
 }

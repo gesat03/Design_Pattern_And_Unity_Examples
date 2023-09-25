@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public class TowerDetectedState : ITStates
+    public class CannonFiringAnimation : IFiringAnimation
     {
-        public void TowerState()
+        public void MakeAnimation()
         {
-            Debug.Log("Enemy DETECTED ...");
+            Debug.Log("Cannon is bombarding");
         }
     }
 }

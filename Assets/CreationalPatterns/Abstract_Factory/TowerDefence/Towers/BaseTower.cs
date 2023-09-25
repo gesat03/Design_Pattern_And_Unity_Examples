@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public abstract class BaseTower : ITAttributes
+    public abstract class BaseTower
     {
 
         private string _name;
@@ -20,40 +20,15 @@ namespace TowerDefenceExample
         protected ITStates _TowerState;
         protected ITAnimations _TowerAnimations;
         protected ITLevel _TowerLevels;
-        protected ITSpecialities<int> _TowerDamage;
-        protected ITSpecialities<float> _TowerFireRate;
-        protected ITSpecialities<Vector2> _TowerDetectRange;
+        protected ITSpecialities _TowerSpecialities;
 
         public abstract void CreateTower();
 
-        public ITStates CurrentState()
+        public void MakeFireAnimation()
         {
-            throw new System.NotImplementedException();
+            _TowerAnimations.FiringAnimation().MakeAnimation();
         }
 
-        public ITAnimations CurrentAnimation()
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public ITLevel CurrentLevel()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public ITSpecialities<int> GetDamage()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public ITSpecialities<float> GetFireRate()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public ITSpecialities<Vector2> GetRange()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

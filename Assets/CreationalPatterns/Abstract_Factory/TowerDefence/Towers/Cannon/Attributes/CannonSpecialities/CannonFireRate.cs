@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public class TowerIdleState : ITStates
+    public class CannonFireRate : ITFireRate
     {
-        public void TowerState()
+        public float FireRate()
         {
-            Debug.Log("Tower is in stand by position...");
+            return 3.0f;
         }
 
     }

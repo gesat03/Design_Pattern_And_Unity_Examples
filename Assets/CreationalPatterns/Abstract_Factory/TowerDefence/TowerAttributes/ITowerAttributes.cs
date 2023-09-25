@@ -4,15 +4,13 @@ namespace TowerDefenceExample
 {
     public interface ITAttributes
     {
-        public ITStates CurrentState();
+        public ITStates TowerStates();
 
-        public ITAnimations CurrentAnimation();
+        public ITAnimations TowerAnimations();
 
-        public ITLevel CurrentLevel();
+        public ITLevel TowerLevels();
 
-        public ITSpecialities<int> GetDamage();
-        public ITSpecialities<float> GetFireRate();
-        public ITSpecialities<Vector2> GetRange();
+        public ITSpecialities TowerSpecialities();
 
     }
 }
