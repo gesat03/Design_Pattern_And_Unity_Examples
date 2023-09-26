@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public class GatlingGun : MonoBehaviour
+    public class GatlingGunFireRate : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

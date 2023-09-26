@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public class CannonLevelsFactory : ITLevel
+    public class GatlingGunIdleState : ITIdleState
     {
-        public FirstLevel TowerLevel()
+        public void IdleState()
         {
-            return new CannonFirstLevel();
+            Debug.Log("Gatlinggun in idle state...");
         }
     }
 }

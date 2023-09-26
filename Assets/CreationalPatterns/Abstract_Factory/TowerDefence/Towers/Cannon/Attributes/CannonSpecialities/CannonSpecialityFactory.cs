@@ -1,6 +1,6 @@
 namespace TowerDefenceExample
 {
-    public class CannonSpecialitiesFactory : ITSpecialities
+    public class CannonSpecialityFactory : ITSpecialities
     {
         public ITDamage TowerDamage()
         {

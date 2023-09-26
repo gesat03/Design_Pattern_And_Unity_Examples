@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public class CannonStatesFactory : ITStates
+    public class CannonStateFactory : ITStates
     {
         public ITDetectedState TowerDetectState()
         {

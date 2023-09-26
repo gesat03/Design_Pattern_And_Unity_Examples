@@ -1,10 +1,10 @@
 namespace TowerDefenceExample
 {
-    public class Cannon : BaseTower
+    public class CannonTower : BaseTower
     {
         ITAttributes _towerAttributes;
 
-        public Cannon(ITAttributes towerAttributes)
+        public CannonTower(ITAttributes towerAttributes)
         {
             _towerAttributes = towerAttributes;
         }

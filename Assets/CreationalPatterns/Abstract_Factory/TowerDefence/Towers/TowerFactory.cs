@@ -16,27 +16,27 @@ namespace TowerDefenceExample
             {
                 case ETowerTypes.Cannon:
                     attributes = new CannonAttributesFactory();
-                    baseTower = new Cannon(attributes);
+                    baseTower = new CannonTower(attributes);
                     return baseTower;
                 case ETowerTypes.GatlingGun:
                     attributes = new CannonAttributesFactory();
-                    baseTower = new Cannon(attributes);
+                    baseTower = new CannonTower(attributes);
                     return baseTower;
                 case ETowerTypes.MissileLauncher:
                     attributes = new CannonAttributesFactory();
-                    baseTower = new Cannon(attributes);
+                    baseTower = new CannonTower(attributes);
                     return baseTower;
                 case ETowerTypes.Mortar:
                     attributes = new CannonAttributesFactory();
-                    baseTower = new Cannon(attributes);
+                    baseTower = new CannonTower(attributes);
                     return baseTower;
                 case ETowerTypes.Shocker:
                     attributes = new CannonAttributesFactory();
-                    baseTower = new Cannon(attributes);
+                    baseTower = new CannonTower(attributes);
                     return baseTower;
                 default:
                     attributes = new CannonAttributesFactory();
-                    baseTower = new Cannon(attributes);
+                    baseTower = new CannonTower(attributes);
                     return baseTower;
             }
         }

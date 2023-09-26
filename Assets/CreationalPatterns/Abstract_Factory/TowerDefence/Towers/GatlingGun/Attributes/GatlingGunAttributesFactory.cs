@@ -4,26 +4,26 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public class CannonAttributesFactory : ITAttributes
+    public class GatlingGunAttributesFactory : ITAttributes
     {
         public ITAnimations TowerAnimations()
         {
-            return new CannonAnimationsFactory();
+            throw new System.NotImplementedException();
         }
 
         public ITLevel TowerLevels()
         {
-            return new CannonLevelFactory();
+            throw new System.NotImplementedException();
         }
 
         public ITSpecialities TowerSpecialities()
         {
-            return new CannonSpecialityFactory();
+            throw new System.NotImplementedException();
         }
 
         public ITStates TowerStates()
         {
-            return new CannonStateFactory();
+            throw new System.NotImplementedException();
         }
     }
 }
