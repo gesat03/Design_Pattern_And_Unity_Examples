@@ -1,6 +1,6 @@
 namespace TowerDefenceExample
 {
-    public interface ITSpecialities
+    public interface ITDynamicSpecialities
     {
         public ITDamage TowerDamage();
         public ITDetectRange TowerDetectRange();

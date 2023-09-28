@@ -8,22 +8,22 @@ namespace TowerDefenceExample
     {
         public ITAnimations TowerAnimations()
         {
-            throw new System.NotImplementedException();
+            return new GatlingGunAnimationsFactory();
         }
 
-        public ITLevel TowerLevels()
+        public ITLevels TowerLevels()
         {
-            throw new System.NotImplementedException();
+            return new GatlingGunLevelFactory();
         }
 
-        public ITSpecialities TowerSpecialities()
+        public ITDynamicSpecialities TowerDynamicSpecialities()
         {
-            throw new System.NotImplementedException();
+            return new GatlingGunDynamicSpecialityFactory();
         }
 
         public ITStates TowerStates()
         {
-            throw new System.NotImplementedException();
+            return new GatlingGunStateFactory();
         }
     }
 }

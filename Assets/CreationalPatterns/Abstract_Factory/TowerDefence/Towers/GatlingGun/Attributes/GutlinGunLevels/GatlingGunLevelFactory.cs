@@ -1,21 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace TowerDefenceExample
 {
-    public class GatlingGunLevelFactory : MonoBehaviour
+    public class GatlingGunLevelFactory : ITLevels
     {
-        // Start is called before the first frame update
-        void Start()
+        public IFirstLevel TowerLevel()
         {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            return new GatlingGunFirstLevel();
         }
     }
 }

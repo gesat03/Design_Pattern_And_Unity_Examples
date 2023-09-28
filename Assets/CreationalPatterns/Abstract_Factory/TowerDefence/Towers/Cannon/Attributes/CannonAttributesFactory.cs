@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace TowerDefenceExample
 {
     public class CannonAttributesFactory : ITAttributes
@@ -11,14 +7,14 @@ namespace TowerDefenceExample
             return new CannonAnimationsFactory();
         }
 
-        public ITLevel TowerLevels()
+        public ITLevels TowerLevels()
         {
             return new CannonLevelFactory();
         }
 
-        public ITSpecialities TowerSpecialities()
+        public ITDynamicSpecialities TowerDynamicSpecialities()
         {
-            return new CannonSpecialityFactory();
+            return new CannonDynamicSpecialityFactory();
         }
 
         public ITStates TowerStates()

@@ -19,8 +19,8 @@ namespace TowerDefenceExample
                     baseTower = new CannonTower(attributes);
                     return baseTower;
                 case ETowerTypes.GatlingGun:
-                    attributes = new CannonAttributesFactory();
-                    baseTower = new CannonTower(attributes);
+                    attributes = new GatlingGunAttributesFactory();
+                    baseTower = new GatlingGunTower(attributes);
                     return baseTower;
                 case ETowerTypes.MissileLauncher:
                     attributes = new CannonAttributesFactory();

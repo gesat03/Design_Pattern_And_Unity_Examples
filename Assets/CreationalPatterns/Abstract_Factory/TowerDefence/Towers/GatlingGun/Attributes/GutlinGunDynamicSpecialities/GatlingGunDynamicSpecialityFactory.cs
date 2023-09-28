@@ -1,20 +1,20 @@
 namespace TowerDefenceExample
 {
-    public class CannonSpecialityFactory : ITSpecialities
+    public class GatlingGunDynamicSpecialityFactory : ITDynamicSpecialities
     {
         public ITDamage TowerDamage()
         {
-            return new CannonDamage();
+            return new GatlingGunDamage();
         }
 
         public ITDetectRange TowerDetectRange()
         {
-            return new CannonDetectRange();
+            return new GatlingGunDetectRange();
         }
 
         public ITFireRate TowerFireRate()
         {
-            return new CannonFireRate();
+            return new GatlingGunFireRate();
         }
     }
 }

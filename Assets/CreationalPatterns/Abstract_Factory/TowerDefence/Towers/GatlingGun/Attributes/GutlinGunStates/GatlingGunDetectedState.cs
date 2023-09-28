@@ -4,18 +4,12 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public class GatlingGunDetectedState : MonoBehaviour
+    public class GatlingGunDetectedState : ITDetectedState
     {
-        // Start is called before the first frame update
-        void Start()
+        public void GetState()
         {
-        
+            Debug.Log("Gutling gun DETECTED enemy vehicle !!!");
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }

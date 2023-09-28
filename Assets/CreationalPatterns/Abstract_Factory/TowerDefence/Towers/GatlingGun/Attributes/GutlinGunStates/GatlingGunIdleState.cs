@@ -6,9 +6,9 @@ namespace TowerDefenceExample
 {
     public class GatlingGunIdleState : ITIdleState
     {
-        public void IdleState()
+        public void GetState()
         {
-            Debug.Log("Gatlinggun in idle state...");
+            Debug.Log("Gatling gun in idle state...");
         }
     }
 }

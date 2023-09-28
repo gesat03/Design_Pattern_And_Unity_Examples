@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace TowerDefenceExample
 {
-    public class CannonLevelFactory : ITLevel
+    public class CannonLevelFactory : ITLevels
     {
-        public FirstLevel TowerLevel()
+        public IFirstLevel TowerLevel()
         {
             return new CannonFirstLevel();
         }

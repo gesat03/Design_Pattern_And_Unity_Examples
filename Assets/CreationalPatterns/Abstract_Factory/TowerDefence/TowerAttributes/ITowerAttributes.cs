@@ -8,9 +8,9 @@ namespace TowerDefenceExample
 
         public ITAnimations TowerAnimations();
 
-        public ITLevel TowerLevels();
+        public ITLevels TowerLevels();
 
-        public ITSpecialities TowerSpecialities();
+        public ITDynamicSpecialities TowerDynamicSpecialities();
 
     }
 }

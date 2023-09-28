@@ -1,21 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace TowerDefenceExample
 {
-    public class GatlingGunAnimationsFactory : MonoBehaviour
+    public class GatlingGunAnimationsFactory : ITAnimations
     {
-        // Start is called before the first frame update
-        void Start()
+        public IFiringAnimation FiringAnimation()
         {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            return new GatlingGunFiringAnimation();
         }
     }
 }

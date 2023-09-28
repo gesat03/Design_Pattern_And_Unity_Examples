@@ -11,10 +11,11 @@ namespace TowerDefenceExample
 
         public override void CreateTower()
         {
+            _Name = ETowerTypes.Cannon.ToString();
             _TowerState = _towerAttributes.TowerStates();
             _TowerAnimations = _towerAttributes.TowerAnimations();
             _TowerLevels = _towerAttributes.TowerLevels();
-            _TowerSpecialities = _towerAttributes.TowerSpecialities();
+            _TowerDynamicSpecialities = _towerAttributes.TowerDynamicSpecialities();
         }
     }
 }
