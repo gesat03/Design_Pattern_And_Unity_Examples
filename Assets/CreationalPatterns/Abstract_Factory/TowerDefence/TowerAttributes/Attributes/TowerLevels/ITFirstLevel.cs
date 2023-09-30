@@ -1,6 +1,6 @@
 namespace TowerDefenceExample
 {
-    public interface IFirstLevel
+    public interface ITFirstLevel
     {
         public ETowerLevel GetLevel();
     }

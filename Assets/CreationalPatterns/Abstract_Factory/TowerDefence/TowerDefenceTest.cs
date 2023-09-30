@@ -8,19 +8,19 @@ namespace TowerDefenceExample
     public class TowerDefenceTest : MonoBehaviour
     {
         public Dropdown TowerTypeDropDown;
+        public ETowerTypes _towerType;
 
-        private ETowerTypes _towerType;
         private BaseTower _currentTower;
-        private BaseTowerFactory _generateTower;
+        private BaseTowerFactory _towerGenerator;
 
         //public ETowerTypes TowerType;
 
 
         private void Start()
         {
-            _generateTower = new TowerFactory();
+            _towerGenerator = new TowerFactory();
 
-            _towerType = ETowerTypes.Cannon;
+            _currentTower = _towerGenerator.GetTower(_towerType);
 
             //BaseTowerFactory GenerateTower = new TowerFactory();
 
@@ -33,7 +33,7 @@ namespace TowerDefenceExample
         {
             _towerType = (ETowerTypes)TowerTypeDropDown.value;
 
-            _currentTower = _generateTower.GetTower(_towerType);
+            _currentTower = _towerGenerator.GetTower(_towerType);
 
             Debug.Log(_towerType);
         }
@@ -66,6 +66,11 @@ namespace TowerDefenceExample
         public void IdleAnimationTest()
         {
             _currentTower.NoEnemyDetection();
+        }
+
+        public void DetectabilityTest()
+        {
+            _currentTower.GetDetection();
         }
 
     }

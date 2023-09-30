@@ -1,6 +1,6 @@
 namespace TowerDefenceExample
 {
-    public class GatlingGunFirstLevel : IFirstLevel
+    public class GatlingGunFirstLevel : ITFirstLevel
     {
         public ETowerLevel GetLevel()
         {

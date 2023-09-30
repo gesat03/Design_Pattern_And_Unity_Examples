@@ -12,5 +12,7 @@ namespace TowerDefenceExample
 
         public ITDynamicSpecialities TowerDynamicSpecialities();
 
+        public ITStaticSpecialities TowerStaticSpecialities();
+
     }
 }

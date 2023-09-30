@@ -21,5 +21,10 @@ namespace TowerDefenceExample
         {
             return new CannonStateFactory();
         }
+
+        public ITStaticSpecialities TowerStaticSpecialities()
+        {
+            return new CannonStaticSpecialitiesFactory();
+        }
     }
 }

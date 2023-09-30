@@ -2,7 +2,7 @@ namespace TowerDefenceExample
 {
     public class CannonLevelFactory : ITLevels
     {
-        public IFirstLevel TowerLevel()
+        public ITFirstLevel TowerLevel()
         {
             return new CannonFirstLevel();
         }

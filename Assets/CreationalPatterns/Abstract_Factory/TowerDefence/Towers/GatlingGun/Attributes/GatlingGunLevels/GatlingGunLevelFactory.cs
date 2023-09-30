@@ -2,7 +2,7 @@ namespace TowerDefenceExample
 {
     public class GatlingGunLevelFactory : ITLevels
     {
-        public IFirstLevel TowerLevel()
+        public ITFirstLevel TowerLevel()
         {
             return new GatlingGunFirstLevel();
         }

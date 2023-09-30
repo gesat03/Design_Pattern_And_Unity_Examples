@@ -25,5 +25,10 @@ namespace TowerDefenceExample
         {
             return new GatlingGunStateFactory();
         }
+
+        public ITStaticSpecialities TowerStaticSpecialities()
+        {
+            return new GatlingGunStaticSpecialitiesFactory();
+        }
     }
 }

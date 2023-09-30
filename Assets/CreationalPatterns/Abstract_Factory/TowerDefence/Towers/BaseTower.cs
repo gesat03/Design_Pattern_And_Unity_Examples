@@ -9,10 +9,11 @@ namespace TowerDefenceExample
 
         protected string _Name;
 
-        protected ITStates _TowerState;
+        protected ITStates _TowerStates;
         protected ITAnimations _TowerAnimations;
         protected ITLevels _TowerLevels;
         protected ITDynamicSpecialities _TowerDynamicSpecialities;
+        protected ITStaticSpecialities _TowerStaticSpecialities;
 
         public abstract void CreateTower();
 
@@ -23,12 +24,12 @@ namespace TowerDefenceExample
 
         public void EnemyDetected()
         {
-            _TowerState.TowerDetectState().GetState();
+            _TowerStates.TowerDetectState().GetState();
         }
 
         public void NoEnemyDetection()
         {
-            _TowerState.TowerIdleState().GetState();
+            _TowerStates.TowerIdleState().GetState();
         }
 
         public void ApplyingDamage()
@@ -44,6 +45,22 @@ namespace TowerDefenceExample
         public void GetFireRate()
         {
             Debug.Log(_Name + " has " + 1 / _TowerDynamicSpecialities.TowerFireRate().FireRate() + " shots per second...");
+        }
+
+        public void GetDetection()
+        {
+            bool air = _TowerStaticSpecialities.Detectablity().Air();
+            bool ground = _TowerStaticSpecialities.Detectablity().Ground();
+            bool water = _TowerStaticSpecialities.Detectablity().Water();
+
+            string airResult = air ? "-air " : "";
+            string groundResult = ground ? "-ground " : "";
+            string waterResult = water ? "-water" : "";
+
+            Debug.Log(_Name + " has ability to attack "
+                + airResult
+                + groundResult
+                + waterResult);
         }
 
     }
