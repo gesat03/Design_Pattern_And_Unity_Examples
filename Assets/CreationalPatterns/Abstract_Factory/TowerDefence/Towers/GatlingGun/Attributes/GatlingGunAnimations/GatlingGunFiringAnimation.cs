@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public class GatlingGunFiringAnimation : IFiringAnimation
+    public class GatlingGunFiringAnimation : ITFiringAnimation
     {
         public void MakeAnimation()
         {

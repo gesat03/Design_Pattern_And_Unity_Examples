@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace TowerDefenceExample
 {
-    public class MissileLauncherFiringAnimation : ITFiringAnimation
+    public class MortarFiringAnimation : ITFiringAnimation
     {
         public void MakeAnimation()
         {
-            Debug.Log("Missile lunched !!!");
+            Debug.Log("Mortar is launch the BOMB!!!");
         }
     }
 }

@@ -44,7 +44,7 @@ namespace TowerDefenceExample
 
         public void GetFireRate()
         {
-            Debug.Log(_Name + " has " + 1 / _TowerDynamicSpecialities.TowerFireRate().FireRate() + " shots per second...");
+            Debug.Log(_Name + " make 1 shot every " + _TowerDynamicSpecialities.TowerFireRate().FireRate() + " second...");
         }
 
         public void GetDetection()

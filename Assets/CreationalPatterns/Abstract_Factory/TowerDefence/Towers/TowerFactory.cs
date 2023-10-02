@@ -15,27 +15,27 @@ namespace TowerDefenceExample
             switch (towerType)
             {
                 case ETowerTypes.Cannon:
-                    attributes = new CannonAttributesFactory();
+                    attributes = new CannonAttributeFactory();
                     baseTower = new CannonTower(attributes);
                     return baseTower;
                 case ETowerTypes.GatlingGun:
-                    attributes = new GatlingGunAttributesFactory();
+                    attributes = new GatlingGunAttributeFactory();
                     baseTower = new GatlingGunTower(attributes);
                     return baseTower;
                 case ETowerTypes.MissileLauncher:
-                    attributes = new MissileLauncherAttributesFactory();
+                    attributes = new MissileLauncherAttributeFactory();
                     baseTower = new MissileLauncherTower(attributes);
                     return baseTower;
                 case ETowerTypes.Mortar:
-                    attributes = new CannonAttributesFactory();
-                    baseTower = new CannonTower(attributes);
+                    attributes = new MortarAttributeFactory();
+                    baseTower = new MortarTower(attributes);
                     return baseTower;
                 case ETowerTypes.Shocker:
-                    attributes = new CannonAttributesFactory();
-                    baseTower = new CannonTower(attributes);
+                    attributes = new ShockerAttributeFactory();
+                    baseTower = new ShockerTower(attributes);
                     return baseTower;
                 default:
-                    attributes = new CannonAttributesFactory();
+                    attributes = new CannonAttributeFactory();
                     baseTower = new CannonTower(attributes);
                     return baseTower;
             }
