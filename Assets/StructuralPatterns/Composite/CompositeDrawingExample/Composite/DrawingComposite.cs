@@ -4,16 +4,15 @@ using UnityEngine;
 
 namespace CompositeDrawingExample
 {
-    public class Drawing : MonoBehaviour, IShape
+    public class DrawingComposite : MonoBehaviour, IShape
     {
         private List<IShape> _shapes = new List<IShape>();
 
-        public void Draw(EShapeColor color)
+        bool _enableDrawing;
+
+        public void Draw()
         {
-            foreach (var shape in _shapes)
-            {
-                shape.Draw(color);
-            }
+            _enableDrawing = true;
         }
 
         public void Add(IShape shape)
@@ -30,6 +29,17 @@ namespace CompositeDrawingExample
         {
             _shapes.Clear();
             Debug.Log("All shapes cleared");
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (_enableDrawing)
+            {
+                foreach (var shape in _shapes)
+                {
+                    shape.Draw();
+                }
+            }
         }
     }
 }

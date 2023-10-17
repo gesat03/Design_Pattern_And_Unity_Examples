@@ -4,51 +4,37 @@ using UnityEngine;
 
 namespace CompositeDrawingExample
 {
-    public class Circle : MonoBehaviour, IShape
+    public class Circle : IShape
     {
-        public int _numSegment;
-        public float _radius;
-        bool _enableGizmos;
+        EShapeColor _color;
+        float _length;
 
-        public Circle(float radius, int numSegment)
+        public Circle(EShapeColor color, float lenght)
         {
-            _radius = radius;
-            _numSegment = numSegment;
-            _enableGizmos = false;
+            _color = color;
+            _length = lenght;
         }
 
-        public void Draw(EShapeColor color)
+        public void Draw()
         {
-            _enableGizmos = true;
-            Debug.Log("Circle shape with " + color.ToString() + " color" + " with " + _radius + " m radius.");
-        }
-
-        void DrawCircle()
-        {
-            float angleIncrement = 360f / _numSegment;
+            int numSegment = 100;
+            float angleIncrement = 360f / numSegment;
             Vector3 previousPoint = Vector3.zero;
 
-            for (int i = 0; i <= _numSegment; i++)
+            for (int i = 0; i <= numSegment; i++)
             {
                 float angle = i * angleIncrement;
-                float x = Mathf.Sin(Mathf.Deg2Rad * angle) * _radius;
-                float z = Mathf.Cos(Mathf.Deg2Rad * angle) * _radius;
+                float x = Mathf.Sin(Mathf.Deg2Rad * angle) * _length;
+                float z = Mathf.Cos(Mathf.Deg2Rad * angle) * _length;
                 Vector3 currentPoint = new Vector3(x, 0, z);
 
                 if (i > 0)
                 {
+                    Gizmos.color = SetDrawColor.Set(_color);
                     Gizmos.DrawLine(previousPoint, currentPoint);
                 }
 
                 previousPoint = currentPoint;
-            }
-        }
-
-        private void OnDrawGizmos()
-        {
-            if (_enableGizmos)
-            {
-                DrawCircle();
             }
         }
     }

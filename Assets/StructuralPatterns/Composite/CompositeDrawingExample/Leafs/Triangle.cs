@@ -6,31 +6,36 @@ namespace CompositeDrawingExample
 {
     public class Triangle : IShape
     {
-        float _triSize;
+        EShapeColor _color;
+        float _length;
 
-        public Triangle(float triSize)
+        public Triangle(EShapeColor color, float lenght)
         {
-            _triSize = triSize;
+            _color = color;
+            _length = lenght;
         }
 
-        public void Draw(EShapeColor color)
+        public void Draw()
         {
-            Debug.Log("Triangle shape with " + color.ToString() + " color" + " with " + _triSize + " m size.");
+            int numSegment = 3;
+            float angleIncrement = 360f / numSegment;
+            Vector3 previousPoint = Vector3.zero;
+
+            for (int i = 0; i <= numSegment; i++)
+            {
+                float angle = i * angleIncrement;
+                float x = Mathf.Sin(Mathf.Deg2Rad * angle) * _length;
+                float z = Mathf.Cos(Mathf.Deg2Rad * angle) * _length;
+                Vector3 currentPoint = new Vector3(x, 0, z);
+
+                if (i > 0)
+                {
+                    Gizmos.color = SetDrawColor.Set(_color);
+                    Gizmos.DrawLine(previousPoint, currentPoint);
+                }
+
+                previousPoint = currentPoint;
+            }
         }
-
-        void DrawTriangle()
-        {
-            float halfSize = _triSize / 2;
-
-            // Üçgenin köşe noktalarını hesaplayın
-            Vector3 pointA = new Vector3(0f, -halfSize, 0f);
-            Vector3 pointB = new Vector3(-halfSize, halfSize, 0f);
-            Vector3 pointC = new Vector3(halfSize, halfSize, 0f);
-
-            Gizmos.DrawLine(pointA, pointB);
-            Gizmos.DrawLine(pointB, pointC);
-            Gizmos.DrawLine(pointC, pointA);
-        }
-
     }
 }

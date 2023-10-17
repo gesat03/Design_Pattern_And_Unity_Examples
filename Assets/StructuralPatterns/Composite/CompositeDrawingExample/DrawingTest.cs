@@ -1,36 +1,108 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace CompositeDrawingExample
 {
     public class DrawingTest : MonoBehaviour
     {
-        Drawing _drawing;
+        DrawingComposite _drawing;
 
         void Start()
         {
-            _drawing = gameObject.AddComponent<Drawing>();
+            _drawing = gameObject.AddComponent<DrawingComposite>();
 
-            Triangle triangle = new Triangle(2f);
-            Circle circle = gameObject.AddComponent<Circle>();
-            //circle._radius = 2;
-            //circle._numSegment = 100;
-            Circle circle2 = gameObject.AddComponent<Circle>();
-            Square square = new Square();
+            Triangle triangle = new Triangle(EShapeColor.Red, 1f);
+            Circle circle = new Circle(EShapeColor.Green, 1.5f);
+            Square square = new Square(EShapeColor.Blue, 2f);
 
             _drawing.Add(triangle);
             _drawing.Add(square);
             _drawing.Add(circle);
-            _drawing.Add(circle2);
 
-            _drawing.Draw(EShapeColor.Red);
+            _drawing.Draw();
 
-            _drawing.Remove(circle);
+            StartCoroutine(DrawWithDelay(1.5f));
 
-            _drawing.Draw(EShapeColor.Blue);
+            IEnumerator DrawWithDelay(float time)
+            {
+                yield return new WaitForSeconds(time);
+                _drawing.Remove(circle);
+                _drawing.Draw();
+                yield return new WaitForSeconds(time);
+                _drawing.Remove(square);
+                _drawing.Draw();
+                yield return new WaitForSeconds(time);
+                _drawing.Remove(triangle);
+                _drawing.Draw();
+                yield return new WaitForSeconds(time);
+                _drawing.Add(triangle);
+                _drawing.Draw();
+                yield return new WaitForSeconds(time);
+                _drawing.Add(square);
+                _drawing.Draw();
+                yield return new WaitForSeconds(time);
+                _drawing.Add(circle);
+                _drawing.Draw();
+                yield return new WaitForSeconds(time);
+                _drawing.Clear();
+                _drawing.Draw();
+            }
+        }
 
-           // _drawing.Clear();
+        void taskExample()
+        {
+            //tasks.Add(RemoveCircle());
+            //tasks.Add(RemoveSquare());
+            //tasks.Add(RemoveTriangle());
+            //tasks.Add(AddTriangle());
+            //tasks.Add(AddSquare());
+            //tasks.Add(AddCircle());
+            //tasks.Add(RemoveAll());
+
+            //async Task RemoveCircle()
+            //{
+            //    await Task.Delay(2000);
+            //    _drawing.Remove(circle);
+            //    _drawing.Draw();
+            //}
+            //async Task RemoveSquare()
+            //{
+            //    await Task.Delay(2000);
+            //    _drawing.Remove(square);
+            //    _drawing.Draw();
+            //}
+            //async Task RemoveTriangle()
+            //{
+            //    await Task.Delay(2000);
+            //    _drawing.Remove(triangle);
+            //    _drawing.Draw();
+            //}
+            //async Task AddTriangle()
+            //{
+            //    await Task.Delay(2000);
+            //    _drawing.Add(triangle);
+            //    _drawing.Draw();
+            //}
+            //async Task AddSquare()
+            //{
+            //    await Task.Delay(2000);
+            //    _drawing.Add(square);
+            //    _drawing.Draw();
+            //}
+            //async Task AddCircle()
+            //{
+            //    await Task.Delay(2000);
+            //    _drawing.Add(circle);
+            //    _drawing.Draw();
+            //}
+            //async Task RemoveAll()
+            //{
+            //    await Task.Delay(2000);
+            //    _drawing.Clear();
+            //    _drawing.Draw();
+            //}
         }
 
     }

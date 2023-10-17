@@ -6,8 +6,6 @@ namespace CompositeDrawingExample
 {
     public interface IShape
     {
-
-        public void Draw(EShapeColor color);
-
+        public void Draw();
     }
 }
