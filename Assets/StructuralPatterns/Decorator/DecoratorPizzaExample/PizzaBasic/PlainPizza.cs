@@ -6,14 +6,16 @@ namespace DecoratorPizzaExample
 {
     public class PlainPizza : IPizza
     {
+        float _cost = 4.0f;
+
         public float Cost()
         {
-            return 4.00f;
+            return _cost;
         }
 
         public string GetDescription()
         {
-            return "Thin dough";
+            return "Thin dough - with cost of: " + _cost;
         }
     }
 }

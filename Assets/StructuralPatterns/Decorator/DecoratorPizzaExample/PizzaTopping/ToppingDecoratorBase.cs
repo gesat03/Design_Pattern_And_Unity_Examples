@@ -6,21 +6,21 @@ namespace DecoratorPizzaExample
 {
     public class ToppingDecoratorBase : IPizza
     {
-        protected IPizza TempPizza;
+        protected IPizza _pizza;
 
         public ToppingDecoratorBase(IPizza pizza)
         {
-            TempPizza = pizza;
+            _pizza = pizza;
         }
 
         public virtual float Cost()
         {
-            return TempPizza.Cost();
+            return _pizza.Cost();
         }
 
         public virtual string GetDescription()
         {
-            return TempPizza.GetDescription();
+            return _pizza.GetDescription();
         }
     }
 }

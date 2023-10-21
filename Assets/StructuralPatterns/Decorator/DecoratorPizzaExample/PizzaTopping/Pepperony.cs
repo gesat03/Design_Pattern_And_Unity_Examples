@@ -4,18 +4,23 @@ using UnityEngine;
 
 namespace DecoratorPizzaExample
 {
-    public class Pepperony : MonoBehaviour
+    public class Pepperony : ToppingDecoratorBase
     {
-        // Start is called before the first frame update
-        void Start()
+        float _cost = 0.15f;
+
+        public Pepperony(IPizza pizza) : base(pizza)
         {
-        
+
         }
 
-        // Update is called once per frame
-        void Update()
+        public override float Cost()
         {
-        
+            return base.Cost() + _cost;
+        }
+
+        public override string GetDescription()
+        {
+            return base.GetDescription() + "\nadded slice of pepperony - with cost of: " + _cost;
         }
     }
 }

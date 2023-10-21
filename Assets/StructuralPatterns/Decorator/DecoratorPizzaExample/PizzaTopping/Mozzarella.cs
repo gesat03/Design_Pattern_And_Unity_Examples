@@ -20,7 +20,7 @@ namespace DecoratorPizzaExample
 
         public override string GetDescription()
         {
-            return base.GetDescription() + " added mozzarella";
+            return base.GetDescription() + "\nadded mozzarella - with cost of: " + _cost;
         }
     }
 }

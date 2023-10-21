@@ -9,7 +9,7 @@ namespace CompositePersonalExample
 
         int _point;
 
-        public PerformanceAppraisal(BaseEmployee employee, int point) : base(employee)
+        public PerformanceAppraisal(BaseEmployeeComponent employee, int point) : base(employee)
         {
             _point = point;
         }

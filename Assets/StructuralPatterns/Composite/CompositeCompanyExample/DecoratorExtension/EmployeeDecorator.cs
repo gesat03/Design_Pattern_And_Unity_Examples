@@ -6,11 +6,11 @@ namespace CompositePersonalExample
 {
     // Decorator
 
-    public abstract class EmployeeDecorator : BaseEmployee
+    public abstract class EmployeeDecorator : BaseEmployeeComponent
     {
-        protected BaseEmployee _employee;
+        protected BaseEmployeeComponent _employee;
 
-        public EmployeeDecorator(BaseEmployee employee) : base(employee._name, employee._position)
+        public EmployeeDecorator(BaseEmployeeComponent employee) : base(employee._name, employee._position)
         {
             _employee = employee;
         }

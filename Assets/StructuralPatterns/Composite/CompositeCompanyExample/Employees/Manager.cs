@@ -6,21 +6,21 @@ namespace CompositePersonalExample
 {
     // Composite
 
-    public class Manager : BaseEmployee
+    public class Manager : BaseEmployeeComponent
     {
-        private List<BaseEmployee> subordinates;
+        private List<BaseEmployeeComponent> subordinates;
 
         public Manager(string name, EEmployeePosition position) : base(name, position) 
         {
-            subordinates = new List<BaseEmployee>();
+            subordinates = new List<BaseEmployeeComponent>();
         }
 
-        public void AddSubordinate(BaseEmployee employee)
+        public void AddSubordinate(BaseEmployeeComponent employee)
         {
             subordinates.Add(employee);
         }
 
-        public void RemoveSubordinate(BaseEmployee employee)
+        public void RemoveSubordinate(BaseEmployeeComponent employee)
         {
             subordinates.Remove(employee);
         }

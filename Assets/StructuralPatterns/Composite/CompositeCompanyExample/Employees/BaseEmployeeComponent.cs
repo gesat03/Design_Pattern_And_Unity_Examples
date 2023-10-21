@@ -6,13 +6,13 @@ namespace CompositePersonalExample
 {
     // Component
 
-    public abstract class BaseEmployee
+    public abstract class BaseEmployeeComponent
     {
 
         public string _name;
         public EEmployeePosition _position;
         
-        public BaseEmployee(string name, EEmployeePosition employee)
+        public BaseEmployeeComponent(string name, EEmployeePosition employee)
         {
             _name = name;
             _position = employee;
