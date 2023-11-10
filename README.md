@@ -1,2 +1,2 @@
-# My_Design_Pattern_Examples
+Design_Pattern_Examples
  
